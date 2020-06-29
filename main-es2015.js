@@ -1166,6 +1166,7 @@ let AuthService = class AuthService {
         this.http = http;
         this.httpUrl = 'https://dry-fjord-48898.herokuapp.com/api/';
     }
+    //httpUrl = 'http://localhost:3000/api/';
     loginUser(user) {
         return this.http.post(this.httpUrl + 'user/login', user, { responseType: 'text' });
     }
@@ -1216,6 +1217,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let HttpService = class HttpService {
+    //httpUrl = 'http://localhost:3000/api/';
     constructor(http) {
         this.http = http;
         this.httpUrl = 'https://dry-fjord-48898.herokuapp.com/api/';
@@ -2130,7 +2132,7 @@ let AddNoticeComponent = class AddNoticeComponent {
             // console.log(formData);
             // console.log(categories);
             this.httpService.addNotice(formData).subscribe(res => {
-                console.log(res);
+                //console.log(res);
                 this.message = 'Twoje ogłoszenie zostało dodane!';
                 //this.addNoticeForm.reset();
                 //this.openSnackBar();
@@ -2141,6 +2143,7 @@ let AddNoticeComponent = class AddNoticeComponent {
                 this.addSpinnerActive = false;
                 this.openSnackBar();
                 //this.addNoticeForm.reset();
+                this.imgURL = [];
             });
             event.currentTarget.reset();
         }
@@ -2461,9 +2464,9 @@ let EditNoticeComponent = class EditNoticeComponent {
             }, () => {
                 this.addSpinnerActive = false;
                 this.openSnackBar();
-                this.addNoticeForm.reset();
+                //this.addNoticeForm.reset();
             });
-            event.currentTarget.reset();
+            //event.currentTarget.reset();
         }
     }
     onFilesSelected(event) {

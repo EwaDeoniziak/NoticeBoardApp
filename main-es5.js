@@ -2006,7 +2006,8 @@
         this.router = router;
         this.http = http;
         this.httpUrl = 'https://dry-fjord-48898.herokuapp.com/api/';
-      }
+      } //httpUrl = 'http://localhost:3000/api/';
+
 
       loginUser(user) {
         return this.http.post(this.httpUrl + 'user/login', user, {
@@ -2084,6 +2085,7 @@
     "./node_modules/@angular/common/fesm2015/http.js");
 
     let HttpService = class HttpService {
+      //httpUrl = 'http://localhost:3000/api/';
       constructor(http) {
         this.http = http;
         this.httpUrl = 'https://dry-fjord-48898.herokuapp.com/api/';
@@ -3361,7 +3363,7 @@
           // console.log(categories);
 
           this.httpService.addNotice(formData).subscribe(res => {
-            console.log(res);
+            //console.log(res);
             this.message = 'Twoje ogłoszenie zostało dodane!'; //this.addNoticeForm.reset();
             //this.openSnackBar();
           }, err => {
@@ -3370,6 +3372,8 @@
           }, () => {
             this.addSpinnerActive = false;
             this.openSnackBar(); //this.addNoticeForm.reset();
+
+            this.imgURL = [];
           });
           event.currentTarget.reset();
         }
@@ -3835,10 +3839,8 @@
             this.openSnackBar();
           }, () => {
             this.addSpinnerActive = false;
-            this.openSnackBar();
-            this.addNoticeForm.reset();
-          });
-          event.currentTarget.reset();
+            this.openSnackBar(); //this.addNoticeForm.reset();
+          }); //event.currentTarget.reset();
         }
       }
 
